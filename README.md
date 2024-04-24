@@ -161,6 +161,9 @@ print("tensorflow-metal version:", tf_metal_version)
 ```
 
 tensorflow-metal version: 1.1.0
+<br>
+<br>
+<br>
 
 ### 9. Demo
 
