@@ -1,4 +1,4 @@
-# Steps to enable tensorflow GPU on Macbook Pro M2 - Tensorflow-metal
+# Steps to enable tensorflow GPU support on Macbook Pro M2 - Tensorflow-metal
 
 ## Requirements
 
@@ -91,6 +91,8 @@ if gpus:
 Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
 GPU details: {'device_name': 'METAL'}
 
+### Optional
+
 ```python
 import tensorflow as tf
 
@@ -134,3 +136,47 @@ else:
 ```
 
 TensorFlow is set to use only GPU.
+
+```python
+import pkg_resources
+
+tf_metal_version = pkg_resources.get_distribution("tensorflow-metal").version
+print("tensorflow-metal version:", tf_metal_version)
+```
+
+tensorflow-metal version: 1.1.0
+
+```python
+import tensorflow as tf
+cifar = tf.keras.datasets.cifar100
+(x_train, y_train), (x_test, y_test) = cifar.load_data()
+model = tf.keras.applications.ResNet50(
+  include_top=True,
+  weights=None,
+  input_shape=(32, 32, 3),
+  classes=100,)
+
+loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False)
+
+model.compile(optimizer="adam", loss=loss_fn, metrics=["accuracy"])
+
+model.fit(x_train, y_train, epochs=5, batch_size=64)
+```
+
+2024-04-24 13:07:05.516306: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M2 Pro
+2024-04-24 13:07:05.516327: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 16.00 GB
+2024-04-24 13:07:05.516333: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 5.33 GB
+2024-04-24 13:07:05.516523: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:306] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2024-04-24 13:07:05.516871: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:272] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Epoch 1/5
+2024-04-24 13:07:07.921342: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+782/782 [==============================] - 48s 57ms/step - loss: 4.7597 - accuracy: 0.0696
+Epoch 2/5
+782/782 [==============================] - 45s 57ms/step - loss: 4.1770 - accuracy: 0.1240
+Epoch 3/5
+782/782 [==============================] - 44s 57ms/step - loss: 4.0678 - accuracy: 0.1433
+Epoch 4/5
+782/782 [==============================] - 44s 57ms/step - loss: 4.0673 - accuracy: 0.1178
+Epoch 5/5
+782/782 [==============================] - 45s 57ms/step - loss: 3.8240 - accuracy: 0.1616
+<keras.src.callbacks.History at 0x319f07c90>
