@@ -113,9 +113,7 @@ else:
     print("No GPU available, using CPU instead.")
 ```
 
-```bash
 GPU is available and set to use.
-```
 
 ```python
 import tensorflow as tf
@@ -137,6 +135,4 @@ else:
     print("No GPU available, TensorFlow will use CPU by default.")
 ```
 
-```bash
 TensorFlow is set to use only GPU.
-```
