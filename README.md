@@ -97,6 +97,8 @@ GPU details: {'device_name': 'METAL'}
 
 ### Optional
 
+You can set up TensorFlow to utilize the GPU, enabling memory growth and setting the visible device to the GPU if available.
+
 ```python
 import tensorflow as tf
 
@@ -117,9 +119,11 @@ else:
     print("No GPU available, using CPU instead.")
 ```
 
-```
+```bash
 GPU is available and set to use.
 ```
+
+You can configure TensorFlow to utilize the GPU exclusively if available, allowing memory growth and setting the visible device accordingly. If no GPU is detected, TensorFlow will default to using the CPU.
 
 ```python
 import tensorflow as tf
@@ -145,6 +149,10 @@ else:
 TensorFlow is set to use only GPU.
 ```
 
+#### Verify tensorflow-metal version
+
+You can retrieve the version of "tensorflow-metal" using pkg_resources and print it.
+
 ```python
 import pkg_resources
 
@@ -153,6 +161,10 @@ print("tensorflow-metal version:", tf_metal_version)
 ```
 
 tensorflow-metal version: 1.1.0
+
+### 9. Demo
+
+You can evaluate the performance enhancement using this script. Execute it once with GPU (metal) support enabled and once within a virtual environment lacking metal installation.
 
 ```python
 import tensorflow as tf
