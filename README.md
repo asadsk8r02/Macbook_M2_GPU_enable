@@ -117,7 +117,7 @@ else:
     print("No GPU available, using CPU instead.")
 ```
 
-```bash
+```
 GPU is available and set to use.
 ```
 
