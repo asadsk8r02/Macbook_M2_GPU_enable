@@ -17,3 +17,21 @@ Xcode command-line tools: xcode-select --install
 ```bash
 python3.11 -m venv ~/tf_metal_env
 ```
+
+This command creates a new virtual environment named "tf_metal_env" in your home directory using Python 3.11.
+
+### 2. Activate the virtual environment
+
+```bash
+source ~/tf_metal_env/bin/activate
+```
+
+This command activates the virtual environment, so any subsequent Python commands will run within this isolated environment.
+
+### 3. Upgrade pip to the latest version
+
+```bash
+python -m pip install --upgrade pip
+```
+
+This command ensures that you have the latest version of pip installed in your virtual environment.
