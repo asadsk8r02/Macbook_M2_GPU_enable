@@ -58,9 +58,32 @@ I this doesn't work, you can downgrade to version 0.7.0.
 ```bash
 pip install ipykernel
 
-#or
+#
 
 python -m ipykernel install --user --name=tf_metal_env
 ```
 
 This will install the IPython kernel package. Once installed, you can then add the IPython kernel to Jupyter.
+
+### 7. Open Jupyter Notebook.
+
+```bash
+jupyter notebook
+```
+
+### 8. Validation and Usage.
+
+Change or check the kernel to tf_metal_env in jupyter notebook: Kernal> Change kernel> tf_metal_env
+
+Following this you can run this script to validate and check the GPU.
+
+```python
+import tensorflow as tf
+devices = tf.config.list_physical_devices()
+print("\nDevices: ", devices)
+
+gpus = tf.config.list_physical_devices('GPU')
+if gpus:
+  details = tf.config.experimental.get_device_details(gpus[0])
+  print("GPU details: ", details)
+```
