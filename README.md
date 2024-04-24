@@ -104,6 +104,7 @@ GPU details: {'device_name': 'METAL'}
 ```
 
 <br>
+
 ### Optional
 
 You can set up TensorFlow to utilize the GPU, enabling memory growth and setting the visible device to the GPU if available.
