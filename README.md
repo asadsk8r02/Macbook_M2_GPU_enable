@@ -30,7 +30,6 @@ source ~/tf_metal_env/bin/activate
 ```
 
 This command activates the virtual environment, so any subsequent Python commands will run within this isolated environment.
-
 <br>
 
 ### 3. Upgrade pip to the latest version
@@ -40,7 +39,6 @@ python -m pip install --upgrade pip
 ```
 
 This command ensures that you have the latest version of pip installed in your virtual environment.
-
 <br>
 
 ### 4. Install TensorFlow 2.14
@@ -50,7 +48,6 @@ python -m pip install tensorflow==2.14.0
 ```
 
 This command installs TensorFlow 2.14 in your virtual environment.
-
 <br>
 
 ### 5. Install tensorflow-metal 1.1.0
@@ -61,7 +58,6 @@ python -m pip install tensorflow-metal==1.1.0
 
 This command installs tensorflow-metal version 1.1.0, which is known to be compatible with TensorFlow 2.14.
 I this doesn't work, you can downgrade to version 0.7.0.
-
 <br>
 
 ### 6. Install ipykernel
@@ -74,7 +70,6 @@ python -m ipykernel install --user --name=tf_metal_env
 ```
 
 This will install the IPython kernel package. Once installed, you can then add the IPython kernel to Jupyter.
-
 <br>
 
 ### 7. Open Jupyter Notebook.
@@ -83,6 +78,7 @@ This will install the IPython kernel package. Once installed, you can then add t
 jupyter notebook
 ```
 
+This command will open the jupyter notebook in your default web browser.
 <br>
 
 ### 8. Validation and usage.
@@ -108,7 +104,6 @@ GPU details: {'device_name': 'METAL'}
 ```
 
 <br>
-
 ### Optional
 
 You can set up TensorFlow to utilize the GPU, enabling memory growth and setting the visible device to the GPU if available.
@@ -164,7 +159,6 @@ TensorFlow is set to use only GPU.
 ```
 
 <br>
-
 ### Verify tensorflow-metal version
 
 You can retrieve the version of "tensorflow-metal" using pkg_resources and print it.
@@ -177,7 +171,6 @@ print("tensorflow-metal version:", tf_metal_version)
 ```
 
 tensorflow-metal version: 1.1.0
-
 <br>
 
 ### 9. Demo
