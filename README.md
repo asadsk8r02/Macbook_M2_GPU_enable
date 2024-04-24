@@ -105,7 +105,7 @@ GPU details: {'device_name': 'METAL'}
 
 <br>
 
-### Optional
+### 8.2 Optional
 
 You can set up TensorFlow to utilize the GPU, enabling memory growth and setting the visible device to the GPU if available.
 
@@ -161,7 +161,7 @@ TensorFlow is set to use only GPU.
 
 <br>
 
-### Verify tensorflow-metal version
+### 8.2 Verify tensorflow-metal version
 
 You can retrieve the version of "tensorflow-metal" using pkg_resources and print it.
 
