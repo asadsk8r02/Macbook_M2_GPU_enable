@@ -21,6 +21,7 @@ python3.11 -m venv ~/tf_metal_env
 ```
 
 This command creates a new virtual environment named "tf_metal_env" in your home directory using Python 3.11.
+<br>
 
 ### 2. Activate the virtual environment
 
