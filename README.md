@@ -1,6 +1,6 @@
 # Steps to enable tensorflow GPU support on Macbook Pro M2 - Tensorflow-metal
 
-This step-by-step instructions for enabling TensorFlow GPU support on a MacBook Pro M2 using TensorFlow-metal. It outlines the necessary requirements, including Mac computers with Apple silicon M2, macOS version 12.0 or later, and Python version 3.8 or later. The guide covers setting up a virtual environment, installing TensorFlow and its dependencies, configuring the IPython kernel for Jupyter Notebook, and validating GPU usage. Optional configurations for TensorFlow GPU utilization are also included.
+These are step-by-step instructions for enabling TensorFlow GPU support on a MacBook Pro M2 using TensorFlow-metal. It outlines the necessary requirements, including Mac computers with Apple silicon M2, macOS version 12.0 or later, and Python version 3.8 or later. The guide covers setting up a virtual environment, installing TensorFlow and its dependencies, configuring the IPython kernel for Jupyter Notebook, and validating GPU usage. Optional configurations for TensorFlow GPU utilization are also included.
 
 ## Requirements
 
@@ -75,7 +75,7 @@ jupyter notebook
 
 ### 8. Validation and Usage.
 
-Change or check the kernel to tf_metal_env in jupyter notebook: Kernal> Change kernel> tf_metal_env
+Change or check the kernel to **tf_metal_env** in jupyter notebook: **Kernal> Change kernel> tf_metal_env**
 
 Following this you can run this script to validate and check the GPU.
 
