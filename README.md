@@ -103,8 +103,6 @@ Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), Phys
 GPU details: {'device_name': 'METAL'}
 ```
 
-<br>
-
 ### 8.2 Optional
 
 You can set up TensorFlow to utilize the GPU, enabling memory growth and setting the visible device to the GPU if available.
@@ -158,8 +156,6 @@ else:
 ```bash
 TensorFlow is set to use only GPU.
 ```
-
-<br>
 
 ### 8.2 Verify tensorflow-metal version
 
