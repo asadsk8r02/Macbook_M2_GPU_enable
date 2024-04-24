@@ -35,3 +35,32 @@ python -m pip install --upgrade pip
 ```
 
 This command ensures that you have the latest version of pip installed in your virtual environment.
+
+### 4. Install TensorFlow 2.14
+
+```bash
+ython -m pip install tensorflow==2.14.0
+```
+
+This command installs TensorFlow 2.14 in your virtual environment.
+
+### 5. Install tensorflow-metal 1.1.0
+
+```bash
+python -m pip install tensorflow-metal==1.1.0
+```
+
+This command installs tensorflow-metal version 1.1.0, which is known to be compatible with TensorFlow 2.14.
+I this doesn't work, you can downgrade to version 0.7.0.
+
+### 6. Install ipykernel
+
+```bash
+pip install ipykernel
+
+#or
+
+python -m ipykernel install --user --name=tf_metal_env
+```
+
+This will install the IPython kernel package. Once installed, you can then add the IPython kernel to Jupyter.
