@@ -88,8 +88,10 @@ if gpus:
   print("GPU details: ", details)
 ```
 
+```bash
 Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
 GPU details: {'device_name': 'METAL'}
+```
 
 ### Optional
 
@@ -113,7 +115,9 @@ else:
     print("No GPU available, using CPU instead.")
 ```
 
+```bash
 GPU is available and set to use.
+```
 
 ```python
 import tensorflow as tf
@@ -135,7 +139,9 @@ else:
     print("No GPU available, TensorFlow will use CPU by default.")
 ```
 
+```bash
 TensorFlow is set to use only GPU.
+```
 
 ```python
 import pkg_resources
@@ -163,6 +169,7 @@ model.compile(optimizer="adam", loss=loss_fn, metrics=["accuracy"])
 model.fit(x_train, y_train, epochs=5, batch_size=64)
 ```
 
+```bash
 2024-04-24 13:07:05.516306: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M2 Pro
 2024-04-24 13:07:05.516327: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 16.00 GB
 2024-04-24 13:07:05.516333: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 5.33 GB
@@ -180,3 +187,4 @@ Epoch 4/5
 Epoch 5/5
 782/782 [==============================] - 45s 57ms/step - loss: 3.8240 - accuracy: 0.1616
 <keras.src.callbacks.History at 0x319f07c90>
+```
