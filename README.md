@@ -30,6 +30,8 @@ source ~/tf_metal_env/bin/activate
 
 This command activates the virtual environment, so any subsequent Python commands will run within this isolated environment.
 
+<br>
+
 ### 3. Upgrade pip to the latest version
 
 ```bash
@@ -38,13 +40,17 @@ python -m pip install --upgrade pip
 
 This command ensures that you have the latest version of pip installed in your virtual environment.
 
+<br>
+
 ### 4. Install TensorFlow 2.14
 
 ```bash
-ython -m pip install tensorflow==2.14.0
+python -m pip install tensorflow==2.14.0
 ```
 
 This command installs TensorFlow 2.14 in your virtual environment.
+
+<br>
 
 ### 5. Install tensorflow-metal 1.1.0
 
@@ -55,17 +61,20 @@ python -m pip install tensorflow-metal==1.1.0
 This command installs tensorflow-metal version 1.1.0, which is known to be compatible with TensorFlow 2.14.
 I this doesn't work, you can downgrade to version 0.7.0.
 
+<br>
+
 ### 6. Install ipykernel
 
 ```bash
 pip install ipykernel
 
-#
 
 python -m ipykernel install --user --name=tf_metal_env
 ```
 
 This will install the IPython kernel package. Once installed, you can then add the IPython kernel to Jupyter.
+
+<br>
 
 ### 7. Open Jupyter Notebook.
 
@@ -73,7 +82,9 @@ This will install the IPython kernel package. Once installed, you can then add t
 jupyter notebook
 ```
 
-### 8. Validation and Usage.
+<br>
+
+### 8. Validation and usage.
 
 Change or check the kernel to **tf_metal_env** in jupyter notebook: **Kernal> Change kernel> tf_metal_env**
 
@@ -94,6 +105,8 @@ if gpus:
 Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
 GPU details: {'device_name': 'METAL'}
 ```
+
+<br>
 
 ### Optional
 
@@ -149,7 +162,9 @@ else:
 TensorFlow is set to use only GPU.
 ```
 
-#### Verify tensorflow-metal version
+<br>
+
+### Verify tensorflow-metal version
 
 You can retrieve the version of "tensorflow-metal" using pkg_resources and print it.
 
@@ -161,8 +176,7 @@ print("tensorflow-metal version:", tf_metal_version)
 ```
 
 tensorflow-metal version: 1.1.0
-<br>
-<br>
+
 <br>
 
 ### 9. Demo
