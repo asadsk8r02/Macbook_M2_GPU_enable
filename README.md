@@ -88,10 +88,8 @@ if gpus:
   print("GPU details: ", details)
 ```
 
-```bash
-Devices:  [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
-GPU details:  {'device_name': 'METAL'}
-```
+Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+GPU details: {'device_name': 'METAL'}
 
 ```python
 import tensorflow as tf
