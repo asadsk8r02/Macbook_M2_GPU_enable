@@ -160,6 +160,7 @@ TensorFlow is set to use only GPU.
 ```
 
 <br>
+
 ### Verify tensorflow-metal version
 
 You can retrieve the version of "tensorflow-metal" using pkg_resources and print it.
