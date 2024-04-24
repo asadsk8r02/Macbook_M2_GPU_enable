@@ -87,3 +87,56 @@ if gpus:
   details = tf.config.experimental.get_device_details(gpus[0])
   print("GPU details: ", details)
 ```
+
+```bash
+Devices:  [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+GPU details:  {'device_name': 'METAL'}
+```
+
+```python
+import tensorflow as tf
+
+# Specify GPU device
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        # Currently, memory growth needs to be the same across GPUs
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+        # Set visible devices to use only GPU
+        tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
+        print("GPU is available and set to use.")
+    except RuntimeError as e:
+        # Memory growth must be set before GPUs have been initialized
+        print(e)
+else:
+    print("No GPU available, using CPU instead.")
+```
+
+```bash
+GPU is available and set to use.
+```
+
+```python
+import tensorflow as tf
+
+# Specify GPU device
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        # Currently, memory growth needs to be the same across GPUs
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+        # Set visible devices to use only GPU
+        tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
+        print("TensorFlow is set to use only GPU.")
+    except RuntimeError as e:
+        # Memory growth must be set before GPUs have been initialized
+        print(e)
+else:
+    print("No GPU available, TensorFlow will use CPU by default.")
+```
+
+```bash
+TensorFlow is set to use only GPU.
+```
